@@ -142,11 +142,11 @@ $("document").ready(function () {
 
     var generatedCode = {
         "RadilChart": 'd3.json("dd.json", function(d){\n\
-                            \r  data = d.map(function(dd){\n\
-                                \r  return dd.age;\n\
-                                \r});\n\
-                            \r  radialChart(data).exec();\n\
-                            \r});',
+                        \r  data = d.map(function(dd){\n\
+                        \r      return dd.age;\n\
+                        \r  });\n\
+                        \r  radialChart(data).exec();\n\
+                        \r});',
         "BarChart": 'barChart().tsv("data.tsv");',
         "SimpleChart": 'simpleChart().json("data2.json");'
     };
@@ -154,13 +154,12 @@ $("document").ready(function () {
     var frameworks_extras = {
 
         ///
-
         "d3.js": {
-            "RadilChart": "VIS/RadialChart/useLayout.js",
+        "RadilChart": "VIS/RadialChart/useLayout.js",
             "BarChart": "VIS/BarChart/barChart.js",
             "SimpleChart": "VIS/SimpleChart/simpleChart.js"
-        },
-        ///
+    },
+    ///
         "jQuery Compat (edge)": {
             "QUnit 1.12.0": "http://code.jquery.com/qunit/qunit-1.12.0.js",
             "jQuery UI 1.10.3": "http://code.jquery.com/jquery-git.js",
@@ -254,6 +253,25 @@ $("document").ready(function () {
         $(".chkbox").change(function () {
             $(".chkbox").prop('checked', false);
             $(this).prop('checked', true);
+
+            //generate code when check
+
+            var dropdownMenu1Sel = $("#dropdownMenu1").parents('.btn-group').find('.dropdown-toggle').text().trim();
+            var extra_libs = []
+            $("#dropdownMenu1").parents('.btn-group').find('input:checked').parent().each(
+                function () {
+                    extra_libs.push($(this).text().trim());
+                }
+            );
+
+            for (var i in extra_libs) {
+
+                if (dropdownMenu1Sel in frameworks_extras) {
+                    console.log("hello")
+                    ace.edit("js-editor").getSession().setValue(generatedCode[extra_libs[i]]);
+                }
+
+            }
         });
     });
 
