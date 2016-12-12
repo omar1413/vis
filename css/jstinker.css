@@ -7,10 +7,10 @@ body {
     background-color: #fff;
 }
 
-.btn .caret {
-    margin: 6px 0px 0px 3px;
-    float: right;
-}
+/*.btn .caret {*/
+    /*margin: 6px 0px 0px 3px;*/
+    /*float: right;*/
+/*}*/
 
 .editors {
     margin: 0px 0px 0 217px;
@@ -76,7 +76,7 @@ body {
     margin-right: 0px;
     color: #fff;
 	font-family: serif;
-	font-style : bold;
+	font-weight: bold;
 }
 
 
@@ -91,7 +91,7 @@ body {
 .navbar-default .navbar-nav>li>a {
     color: #fff;
 	font-family: serif;
-	font-style : bold;
+    font-weight: bold;
 }
 
 
@@ -166,7 +166,6 @@ input[type="radio"],
     background-color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
     cursor: pointer;
 }
 
@@ -248,11 +247,10 @@ input[type="radio"]:disabled:checked:after,
 input[type="checkbox"],
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
-    margin-left: -25px;
+    margin-left: 0;
+    width: 10px;
     border: none;
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     cursor: pointer;
 }
 
@@ -345,7 +343,7 @@ input, textarea {
 .langbutton {
     float: left;
     width: 85px;
-    margin: 0px;
+    margin: 0;
 }
 
 .langright {
