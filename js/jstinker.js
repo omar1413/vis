@@ -41,7 +41,7 @@ $("document").ready(function () {
         var lib_extras = frameworks_extras[selText];
 
         for (extra in lib_extras)
-            dropdown.append("<div class='extra checkbox'><label><input type='checkbox' name='extras' class='chkbox'></input><span class='chk_lbl'>" + extra + "</span></label></div>");
+            dropdown.append("<div class='extra checkbox'><label><input type='checkbox' name='extras' class='chkbox'/><span class='chk_lbl'>" + extra + "</span></label></div>");
 
         //toggle between check boxs
         $(".chkbox").change(function () {
