@@ -6606,7 +6606,8 @@
         },this.setTheme = function (e, t) {
             function o(r) {
                 if (n.$themeId != e)return t && t();
-                if (!r.cssClass)return;
+                //vis
+                if (!r || !(r.cssClass))return;
                 i.importCssString(r.cssText, r.cssClass, n.container.ownerDocument), n.theme && i.removeCssClass(n.container, n.theme.cssClass);
                 var s = "padding" in r ? r.padding : "padding" in (n.theme || {}) ? 4 : n.$padding;
                 n.$padding && s != n.$padding && n.setPadding(s), n.$theme = r.cssClass, n.theme = r, i.addCssClass(n.container, r.cssClass), i.setCssClass(n.container, "ace_dark", r.isDark), n.$size && (n.$size.width = 0, n.$updateSizeAsync()), n._dispatchEvent("themeLoaded", {theme: r}), t && t()
