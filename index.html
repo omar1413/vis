@@ -59,6 +59,7 @@
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 
+    <script src="./vis/visCharts.js"></script>
 
 </head>
 <body>
@@ -101,6 +102,17 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
+
+                        <!-- advanced or custom -->
+
+                        <div class="btn-group advanced-custom-btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary active">
+                                <input type="radio" name="options" class="advanced-custom-radio" id="custom-radio" autocomplete="off" checked> Custom
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="options" class="advanced-custom-radio" id="advanced-radio" autocomplete="off"> Advanced
+                            </label>
+                        </div>
                         <div class="dropdown">
                             <div class="btn-group">
 
@@ -238,7 +250,6 @@
         enableBasicAutocompletion: true
     });
 </script>
-
 
 </body>
 </html>

@@ -128,6 +128,10 @@ body {
     border-top: none;
 }
 
+.advanced-custom-btn-group{
+    margin: 10px;
+}
+
 .btn-default {
     background-image: none;
     border-radius: 0px;

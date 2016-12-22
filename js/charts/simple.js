@@ -5,14 +5,17 @@
 		function SimpleChart(config){
 			// initialization and private variables
 			var self = this;
-			self.text = 'simpleChart().json("data2.json");';
+			self.text = function(path) { 
+				var p = path || 'data/data2.json';
+				return 'simpleChart().json("'+p+'");';
+			};
 			self.file = "VIS/SimpleChart/simpleChart.js";
 		},
 		{
 			//public methods
 			getText: function(){
 				var self = this;
-				return self.text;
+				return self.text();
 			},
 			getScript: function(){
 				var self = this;
