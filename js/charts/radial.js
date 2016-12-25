@@ -5,18 +5,19 @@
 		function RadialChart(config){
 			// initialization and private variables
 			var self = this;
-			self.text = function(path, column){
+				self.customText = function(path) {
 				var p = path || 'data/dd.json';
-				var c = column || 'age';
-				var text = 'd3.json("'+p+'", function(d){\n\
+				var c = 'age';
+				return 'd3.json("'+p+'", function(d){\n\
                         \r  data = d.map(function(dd){\n\
                         \r      return dd.'+c+';\n\
                         \r  });\n\
                         \r  radialChart(data).exec();\n\
                         \r});';
-   				return text;
-
-               };
+			};
+			self.advancedText = function () {
+				return radialChart;
+			};
 			
 			self.file = "VIS/RadialChart/useLayout.js";
 		},
@@ -24,11 +25,23 @@
 			//public methods
 			getText: function(){
 				var self = this;
-				return self.text();
+				console.log(self.advancedUser + "//////////")
+				if(!self.advancedUser) {
+					return self.customText();
+				}
+				else{
+					return self.advancedText();
+				}
 			},
 			getScript: function(){
 				var self = this;
-				return self.file;
+				return self.file; 
+			},
+			setAdvanced : function (status) {
+				if(!arguments.length) return;
+				console.log("2"  + status);
+				var self = this;
+				self.advancedUser = status;
 			}
 
 		}

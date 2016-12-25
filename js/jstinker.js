@@ -57,11 +57,10 @@ $("document").ready(function () {
                     extra_libs.push($(this).text().trim());
                 }
             );
-
             if($("#advanced-radio").prop("checked")){
                 frameworks_extras[dropdownMenu1Sel][extra_libs[0]].setAdvanced(true)
-            }
-            else{
+            } 
+            else{ 
                 frameworks_extras[dropdownMenu1Sel][extra_libs[0]].setAdvanced(false)
             }
 
